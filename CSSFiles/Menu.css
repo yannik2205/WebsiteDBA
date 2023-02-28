@@ -24,14 +24,22 @@
 }
 .MenuItemsLeftSide{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
-    justify-content: center;
-    align-items: center;
+    margin-top: 50px;
 }
-.ImagesMenuItems{
+.MenuStart{
+    display: flex;
+    gap: 15px;
+}
+.IconMenus{
     width: 40px;
     height: 40px;
+    padding-left: 30%;
+}
+.IconsText{
+    display: inline;
+    margin-top: 12px;
 }
 p{
     color: rgb(235, 235, 235);
