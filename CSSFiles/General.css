@@ -1,0 +1,10 @@
+body{
+    margin-left: 0px;
+    margin-top:  0px;
+    background-color: rgb(1, 13, 49);
+    display: flex;
+
+    /* flex properties*/
+    flex-direction: row;
+    justify-content: left;
+}

@@ -1,0 +1,40 @@
+.LeftSidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(1, 13, 49);
+    width: 250px;
+    height: 100%;
+    margin:0px;
+
+    border-right: 2px solid rgba(255, 125, 50, 0.534);
+}
+.ImageHamburger{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    padding-left: 80px;
+    margin-right: 0px;
+    padding-right: 80px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    
+
+    border-bottom: 1px solid rgb(250, 203, 176);
+}
+.MenuItemsLeftSide{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.ImagesMenuItems{
+    width: 40px;
+    height: 40px;
+}
+p{
+    color: rgb(235, 235, 235);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
