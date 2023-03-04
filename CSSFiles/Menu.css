@@ -1,45 +1,81 @@
-.LeftSidebar{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: rgb(1, 13, 49);
-    width: 250px;
-    height: 100%;
-    margin:0px;
-
-    border-right: 2px solid rgba(255, 125, 50, 0.534);
-}
-.ImageHamburger{
-    width: 40px;
-    height: 40px;
-    margin-left: 20px;
-    /*padding-left: 80px;*/
-    margin-right: 10px;
-    padding-right: 80px;
-    margin-top: 20px;
-    padding-bottom: 20px;
-}
-.MenuItemsLeftSide{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 50px;
-}
-.MenuStart{
-    display: flex;
-    gap: 15px;
-}
-.IconMenus{
-    width: 40px;
-    height: 40px;
-    margin-left: 20px;
-}
-.IconsText{
-    display: inline;
-    margin-top: 12px;
-}
 p{
     color: rgb(235, 235, 235);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.LeftSidebar{
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(9, 19, 49);
+    transition: all .5s ease;
+}
+.LeftSidebar header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background-color: rgb(29, 39, 69);
+    user-select: none;
+}
+.LeftSidebar ul a{
+    display: block;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;*/
+}
+ul li:hover a{
+    padding-left: 50px;
+}
+.LeftSidebar ul a i{
+    margin-right: 16px;
+}
+#check{
+    display: none;
+}
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: #042331;
+    border-radius: 3px;
+}
+label #btn{
+    left: 40px;
+    top: 25px;
+    font-size: 3;
+    color: white;
+    padding: 6px;
+    transition: all .5s ease;
+}
+label #cancel{
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+#check:checked ~ .LeftSidebar{
+    left: 0;
+}
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel{
+    left: 195px;
 }
