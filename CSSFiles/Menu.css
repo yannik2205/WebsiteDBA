@@ -13,14 +13,11 @@
     width: 40px;
     height: 40px;
     margin-left: 20px;
-    padding-left: 80px;
-    margin-right: 0px;
+    /*padding-left: 80px;*/
+    margin-right: 10px;
     padding-right: 80px;
     margin-top: 20px;
     padding-bottom: 20px;
-    
-
-    border-bottom: 1px solid rgb(250, 203, 176);
 }
 .MenuItemsLeftSide{
     display: flex;
@@ -35,7 +32,7 @@
 .IconMenus{
     width: 40px;
     height: 40px;
-    padding-left: 30%;
+    margin-left: 20px;
 }
 .IconsText{
     display: inline;
