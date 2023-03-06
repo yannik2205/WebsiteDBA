@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "Live Preview",
+			"workspacePath": "c:\\Users\\blose\\Documents\\vscode\\WebsiteDBA\\WebsiteDBA",
+			"problemMatcher": [],
+			"label": "Live Preview: Server ausführen",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
