@@ -18,7 +18,7 @@ p{
     transition: all .5s ease;
 }
 .LeftSidebar header{
-    font-size: 22px;
+    font-size: 22px; 
     color: white;
     text-align: center;
     line-height: 70px;
@@ -33,11 +33,11 @@ p{
     color: white;
     padding-left: 40px;
     box-sizing: border-box;
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    border-bottom: 1px solid black;*/
 }
 ul li:hover a{
-    padding-left: 50px;
+    transition: all .3s ease;
+    font-size: 22;
+    font-weight: bold;
 }
 .LeftSidebar ul a i{
     margin-right: 16px;
@@ -53,11 +53,12 @@ label #btn, label #cancel{
 }
 label #btn{
     left: 40px;
-    top: 25px;
-    font-size: 3;
+    top: 20px;
+    font-size: 30px;
     color: white;
     padding: 6px;
     transition: all .5s ease;
+    background-color: rgb(1, 13, 49);
 }
 label #cancel{
     z-index: 1111;
