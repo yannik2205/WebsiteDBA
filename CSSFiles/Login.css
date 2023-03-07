@@ -41,15 +41,11 @@ h2{
     position: absolute;
     top: 0;
     left: 5px;
-    transform: translateY(-50%);
+    transform: translateY(0%);
     color: white;
     font-size: 1em;
     pointer-events: none;
     transition: .5s;
-}
-input:focus ~ label, 
-input:valid ~ label{
-    top:  -5px;
 } 
 .inputbox input{
     width: 100%;
@@ -66,7 +62,7 @@ input:valid ~ label{
     right: 8px;
     color: white;
     font-size: 1.2em;
-    top: 20px;
+    top: 15px;
 }
 .forget{
     margin: -15px 0 15px;
