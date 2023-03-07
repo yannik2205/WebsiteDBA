@@ -30,6 +30,7 @@ h2{
     font-size: 2em;
     color: white;
     text-align: center;
+    text-shadow: 0.5px 0.5px rgb(90, 90, 90); /*Jetzt ist auch wendelin zufrieden und nervt mich nicht mehr*/
 }
 .inputbox{
     position: relative;
@@ -46,6 +47,7 @@ h2{
     font-size: 1em;
     pointer-events: none;
     transition: .5s;
+    text-shadow: 0.5px 0.5px rgb(128, 126, 126);
 } 
 .inputbox input{
     width: 100%;
@@ -71,8 +73,8 @@ h2{
     display: flex;
     justify-content: center;
 }
-.forget label input{
-    margin-right: 3px;
+.forget input{
+    margin-right: 3Px;
 }
 .forget label a{
     color: white;

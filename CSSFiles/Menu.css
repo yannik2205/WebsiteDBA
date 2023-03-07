@@ -2,6 +2,7 @@ p{
     color: rgb(235, 235, 235);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    display: inline;
 }
 *{
     margin: 0;
@@ -10,9 +11,83 @@ p{
     text-decoration: none;
 }
 i{
-    background-color: rgb(4, 8, 20);
+    background-color: transparent;
     left: 250px;
+    color: white;
 }
+.Title{
+    font-size: 22px; 
+    color: white;
+    padding-left: 40px;
+    line-height: 70px;
+    background-color: rgb(13, 26, 39);
+    user-select: none;
+    padding:10px;
+}
+.LeftSidebar{
+    background-color: rgb(4, 8, 20);
+}
+.LeftSidebar header{
+    font-size: 22px; 
+    color: white;
+    padding-left: 20px;
+    padding-right: 60px;
+    line-height: 70px;
+    background-color: rgb(13, 26, 39);
+    user-select: none;
+}
+#check{
+    display: none;
+}
+label #btn{
+    cursor: pointer;
+    background: transparent;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 1111;
+    top: 30px;
+    margin-left: -90px;
+    font-size: 30px;
+    color: white;
+    transition: all .5s ease;
+    background-color: rgb(29, 39, 69);
+    background: transparent;
+}
+.grow{
+    transition: all .3s ease;
+    
+}
+.grow:hover{
+    transform: scale(1.2);
+    padding-left: 12px;
+}
+.LeftSidebar p{
+    display: inline;
+    text-decoration: none;
+}
+.LeftSidebar ul a {
+    display: block;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.AccNav{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+#check:checked ~ .LeftSidebar{
+    left:10;
+}
+#check:checked ~ label #btn{
+    left: 20;
+    opacity: 1;
+    
+}
+/*
 .LeftSidebar{
     position: fixed;
     width: 220px;
@@ -20,6 +95,10 @@ i{
     background-color: rgb(4, 8, 20);
     transition: all .5s ease;
     left: -250px;
+}
+.LeftSidebar p{
+    display: inline;
+    text-decoration: none;
 }
 .LeftSidebar header{
     font-size: 22px; 
@@ -68,7 +147,7 @@ label #btn{
     font-size: 30px;
     color: white;
     padding: 6px;
-    /*transition: all .5s ease;*/
+    transition: all .5s ease;
     background-color: transparent;
 }
 label #cancel{
@@ -83,7 +162,7 @@ label #cancel{
     background: transparent;
 }
 #check:checked ~ .LeftSidebar{
-    left: 0;
+    left:0;
 }
 #check:checked ~ label #btn{
     left: 20;
@@ -101,3 +180,12 @@ label #cancel{
     bottom: 0;
     margin-bottom: 10px;
 }
+.AbstandHome{
+    margin-left: 5px;
+}
+.AbstandFiles{
+    margin-left: 10px;
+}
+.AbstandServer{
+    margin-left: 5px;
+}*/
