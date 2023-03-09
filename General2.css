@@ -32,6 +32,7 @@ nav{
     transition: width 0.2s, linear;
     box-sizing: 0 20px 35px rgba(0,0,0,0.1);
     transition: all 0.35s;
+    font-weight: bold;
 }
 a{
     position: relative;
@@ -60,13 +61,13 @@ a{
 .Link-Text{
     position: relative;
     top: 12px;
-    margin-left: 10px;
+    margin-left: 0px;
 }
 a:hover{
     background: #eee;
 }
 nav:hover{
-width: 280px;
+width: 160px;
 }
 .Account{
     position: absolute;
