@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background-color: aquamarine;
+}
+body::-webkit-scrollbar{
+    width: 5px;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgb(59, 59, 59);
+    border-radius: 20px;
+}
+body::-webkit-scrollbar-track{
+    background: rgb(0, 0, 0);
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    background: #fff;
+    width: 80px;
+    overflow: hidden;
+    transition: width 0.2s, linear;
+    box-sizing: 0 20px 35px rgba(0,0,0,0.1);
+    transition: all 0.35s;
+}
+a{
+    position: relative;
+    color: rgb(85,83,83);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+.fa-solid{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.fa-regular{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.Link-Text{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+a:hover{
+    background: #eee;
+}
+nav:hover{
+width: 280px;
+}
+.Account{
+    position: absolute;
+    bottom: 0;
+}

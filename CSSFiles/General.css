@@ -18,3 +18,13 @@ body{
     z-index: -100;
     opacity: 0.3;
 }
+body::-webkit-scrollbar{
+    width: 5px;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgb(59, 59, 59);
+    border-radius: 20px;
+}
+body::-webkit-scrollbar-track{
+    background: rgb(0, 0, 0);
+}
