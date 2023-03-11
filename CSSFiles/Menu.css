@@ -1,191 +1,59 @@
-p{
-    color: rgb(235, 235, 235);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    display: inline;
-}
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-}
-i{
-    background-color: transparent;
-    left: 250px;
-    color: white;
-}
-.Title{
-    font-size: 22px; 
-    color: white;
-    padding-left: 40px;
-    line-height: 70px;
-    background-color: rgb(13, 26, 39);
-    user-select: none;
-    padding:10px;
-}
-.LeftSidebar{
-    background-color: rgb(4, 8, 20);
-}
-.LeftSidebar header{
-    font-size: 22px; 
-    color: white;
-    padding-left: 20px;
-    padding-right: 60px;
-    line-height: 70px;
-    background-color: rgb(13, 26, 39);
-    user-select: none;
-}
-#check{
-    display: none;
-}
-label #btn{
-    cursor: pointer;
-    background: transparent;
-    border-radius: 3px;
-    position: absolute;
-    z-index: 1111;
-    top: 30px;
-    margin-left: -90px;
-    font-size: 30px;
-    color: white;
-    transition: all .5s ease;
-    background-color: rgb(29, 39, 69);
-    background: transparent;
-}
-.grow{
-    transition: all .3s ease;
-    
-}
-.grow:hover{
-    transform: scale(1.2);
-    padding-left: 12px;
-}
-.LeftSidebar p{
-    display: inline;
-    text-decoration: none;
-}
-.LeftSidebar ul a {
-    display: block;
-    width: 100%;
-    line-height: 65px;
-    font-size: 20px;
-    color: white;
-    padding-left: 40px;
-    box-sizing: border-box;
-}
-.AccNav{
-    position: absolute;
+nav{
+    position: fixed;
+    top: 0;
     bottom: 0;
-    margin-bottom: 10px;
-}
-#check:checked ~ .LeftSidebar{
-    left:10;
-}
-#check:checked ~ label #btn{
-    left: 20;
-    opacity: 1;
-    
-}
-/*
-.LeftSidebar{
-    position: fixed;
-    width: 220px;
-    height: 100%;
-    background-color: rgb(4, 8, 20);
-    transition: all .5s ease;
-    left: -250px;
-}
-.LeftSidebar p{
-    display: inline;
-    text-decoration: none;
-}
-.LeftSidebar header{
-    font-size: 22px; 
-    color: white;
-    padding-left: 40px;
-    line-height: 70px;
-    background-color: rgb(13, 26, 39);
-    user-select: none;
-    left: -250px;
-}
-.LeftSidebar ul a {
-    display: block;
-    width: 100%;
-    line-height: 65px;
-    font-size: 20px;
-    color: white;
-    padding-left: 40px;
-    box-sizing: border-box;
-    left: -250px;
-}
-.grow{
-    transition: all .3s ease;
-    
-}
-.grow:hover{
-    transform: scale(1.2);
-    padding-left: 12px;
-}
-.LeftSidebar ul a i{
-    margin-right: 16px;
-    left: -250px;
-}
-#check{
-    display: none;
-}
-label #btn, label #cancel{
-    position: absolute;
-    cursor: pointer;
-    background: transparent;
-    border-radius: 3px;
-    position: fixed;
-}
-label #btn{
-    left: 30px;
-    top: 20px;
-    font-size: 30px;
-    color: white;
-    padding: 6px;
-    transition: all .5s ease;
-    background-color: transparent;
-}
-label #cancel{
-    z-index: 1111;
-    left: -195px;
-    top: 17px;
-    font-size: 30px;
-    color: white;
-    padding: 4px 9px;
-    transition: all .5s ease;
-    background-color: rgb(29, 39, 69);
-    background: transparent;
-}
-#check:checked ~ .LeftSidebar{
-    left:0;
-}
-#check:checked ~ label #btn{
-    left: 20;
-    opacity: 1;
-    pointer-events: none;
-}
-#check:checked ~ label #cancel{
-    left: 170px;
-}
-#check:checked ~ i{
     left: 0;
+    height: 100%;
+    background: #000000;
+    width: 80px;
+    overflow: hidden;
+    transition: width 0.2s, linear;
+    box-sizing: 0 20px 35px rgba(0,0,0,0.1);
+    transition: all 0.35s;
+    font-weight: bold;
 }
-.AccNav{
+a{
+    position: relative;
+    color: rgb(159, 159, 159);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+.fa-solid{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.fa-regular{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.Link-Text{
+    position: relative;
+    top: 12px;
+    margin-left: 0px;
+}
+a:hover{
+    background: #292929;
+}
+nav:hover{
+width: 160px;
+}
+.Account{
     position: absolute;
+    margin-top: 315px;
+    transition: all 0.2s;
+}
+.Account:hover{
     bottom: 0;
-    margin-bottom: 10px;
+    
+    
 }
-.AbstandHome{
-    margin-left: 5px;
-}
-.AbstandFiles{
-    margin-left: 10px;
-}
-.AbstandServer{
-    margin-left: 5px;
-}*/
