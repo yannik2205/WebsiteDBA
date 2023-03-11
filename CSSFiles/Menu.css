@@ -50,7 +50,7 @@ width: 160px;
 .Account{
     position: absolute;
     margin-top: 315px;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
 }
 .Account:hover{
     bottom: 0;
