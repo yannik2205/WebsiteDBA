@@ -1,14 +1,50 @@
 <html>
     <head>
-        <title> Forum ACT - Gaming | Settings</title>
+        <title> Forum ACT - Gaming </title>
         <link rel="stylesheet" href="CSSFiles/AccountSettings.css">
-        <script src="https://kit.fontawesome.com/b86feec811.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <section>
-            <h1>Settings</h1>
-            <div class="SettingsBox">
-                
+            <div class="form-box">
+                <div class="form-value">
+                    <h1> Settings </h1>
+                    <form  class = "Username" action="PHPFiles/SettingsUsername.php" method="post">
+                        <div class="UsernameDiv">
+                            <h3> Username </h3>
+                            <p> Neuer Nutzername</p>
+                            <div class="inputbox">
+                                <input type="text" name="NewUsername">
+                            </div>
+                            <div class="Button">
+                                <button type="submit" name="abschicken" value="abschickenUsername">&Auml;ndern</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="Email" action="PHPFiles/SettingsEmail.php">
+                        <div class="EmailDiv">
+                            <h4> Email </h4>
+                            <p> Neue Email     </p>
+                            <div class="inputbox">
+                                <input type="text" name="NewEmail">
+                            </div>
+                            <div class="Button">
+                                <button type="submit" name="abschicken" value="abschickenEmail">&Auml;ndern</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="Password" action="PHPFiles/SettingsPassword.php">
+                        <div class="PasswordDiv">
+                            <h5> Password </h5>
+                            <p> Neues Password </p>
+                            <div class="inputbox">
+                                <input type="text" name="NewPassword">
+                            </div>
+                            <div class="Button">
+                                <button type="submit" name="abschicken" value="abschickenPassword">&Auml;ndern</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     </body>
