@@ -1,5 +1,5 @@
 <?php
-/* just the basic login via php without safe transfer bc fuck it */
+/* just the basic login via php without safe transfer bc idc about safety it */
  //Connect yallah
     $_SERVER = "panel.act-gaming.de:3306"; //Verbindung zu jonathans panel und dem server
     $user = "u28_DyMoTwUVAJ";
@@ -14,7 +14,7 @@
     $Remember = $_POST["Remember"];
 
     mysqli_select_db($con, $db);
-    $EMailAbfrage = "SELECT COUNT(E_Mail) FROM account WHERE E_Mail = '".mysqli_real_escape_string($_POST['EmailIf'])."'";
+    $EMailAbfrage = "SELECT COUNT(E_Mail) FROM account WHERE E_Mail = '".mysqli_real_escape_string($_POST['Email'])."'";
     $erg = mysqli_query($EMailAbfrage);
     $var = mysqli_fetch_object($erg);
     if ($var ->anzahl == 1){
