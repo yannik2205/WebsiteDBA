@@ -21,7 +21,6 @@
             if($con->connect_error){
                 die("Connection failed:" . $con->connect_error);
             }
-
             //Prepare and execute the query
             $stmt = $con->prepare("SELECT * FROM Account WHERE E_Mail = ?");
             $stmt->bind_param("s", $email);
@@ -37,6 +36,13 @@
                 if($password == $storedPassword){
                     //Authentication successful
                     $_SESSION['E_Mail'] = $email; //Store the email in the session
+                    $temp = $_SESSION['E_Mail'];//store acc id in session
+                    $getAccID = "SELECT Acc_ID FROM Account where E_Mail = '$temp'";
+                    $erggetAcc = mysqli_query($con, $getAccID);
+                    $vargetAcc = mysqli_fetch_array($erggetAcc);
+                    while ($row = mysqli_fetch_array($ergSelect)){
+                        $_SESSION['Acc_ID'] = $row["Vorname"];
+                    }
                     header('Location: index.html'); //Redirect to the dashboard or another page
                     exit;
                 }else{
@@ -81,9 +87,6 @@
                             <i class="fa-solid fa-lock"></i>
                             <input type="password" required name="Password">
                             <label for="">Password</label>
-                        </div>
-                        <div class="forget">
-                            <label for=""><input type="checkbox" name="Remember">Remember Me |<a href="#"> Forgot Password</a></label>
                         </div>
                         <button type="submit" name="abschicken" value="abschicken">Log in</button>
                         <div class="register">
