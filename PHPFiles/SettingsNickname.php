@@ -14,27 +14,27 @@
     $sessionaccid = "12";
 
     //ALl about Nicknames
-    $newnickname = $_POST["NewNickname"];
     //get nickname for placeholder
     $sqlGetNickname = "SELECT GamingTag from Persdat WHERE Acc_ID = '$sessionaccid'";
     $ergGetNickname = mysqli_query($con, $sqlGetNickname);
 
     //change Nickname
     //Is there already this Nickname?
-    $stmt = $con->prepare("SELECT GamingTag FROM Persdat WHERE Acc_ID = ?");
-    $stmt->bind_param("s", $sessionaccid);
-    $stmt->execute();
-    $result = $stmt->get_result();
     
-    //nickname not available
-    $isnicknamefree ="";
-    if ($result->num_rows == 1){
-        $isnicknamefree = "Nicht verfü";
-    }
-    if ($result->num_rows == 0){
-        $updateNickname = "UPDATE persdat SET GamingTag = '$newnickname' WHERE Acc_ID = '$sessionaccid'";
-        $isnicknamefree = "Zufrieden?";
-    }
+        $newnickname = $_POST["NewNickname"];
+        $stmt = $con->prepare("SELECT GamingTag FROM Persdat WHERE GamingTag = '$newnickname'");
+        $stmt->bind_param("s", $sessionaccid);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        //nickname not available
+        if ($result->num_rows == 1){
+            $error = 'Tag already in use';
+        }
+        if ($result->num_rows == 0){
+            $updateNickname = "UPDATE persdat SET GamingTag = '$newnickname' WHERE Acc_ID = '$sessionaccid'";
+        }
+    
 
     mysqli_close($con);
 ?>
@@ -54,8 +54,10 @@
                             <p>Aktueller Gaming Tag:<?php while ($row = mysqli_fetch_array($ergGetNickname)){echo $row["GamingTag"];}?></p>
                             <p> Neuer Nickname</p>
                             <div class="inputbox">
-                                <input type="text" name="NewNickname" style="margin:0px;">
-                                <p><?php echo $isnicknamefree?></p>
+                                <input type="text" value= "NewNickname" name="NewNickname" style="margin:0px;">
+                                <?php if (isset($error)) { ?>
+                                <div class="error"><?php echo $error; ?></div>
+                                <?php } ?>
                             </div>
                             <div class="Button">
                                 <button type="submit" name="abschicken" value="abschickenNickname">&Auml;ndern</button>
