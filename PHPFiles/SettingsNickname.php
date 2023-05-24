@@ -9,41 +9,53 @@
     $con = mysqli_connect($_SERVER, $user, $pass);
     mysqli_select_db($con, $db);
 
-    $sessionemail = $_SESSION['E_Mail'];
-    $newnickname = $_POST['NewNickname'];
+    //sessionvariables
+    $sessionemail = "Peter@gmail.com";//$_SESSION['Email'];
+    $sessionaccid = "12";
 
-    // get gamingtag which equals the sessionemail
-    $stmt = $con->prepare("SELECT GamingTag FROM Account WHERE E_Mail = ?");//hier muss maksim seine scheiße machen
-    $stmt->bind_param("s", $sessionemail);
+    //ALl about Nicknames
+    $newnickname = $_POST["NewNickname"];
+    //get nickname for placeholder
+    $sqlGetNickname = "SELECT GamingTag from Persdat WHERE Acc_ID = '$sessionaccid'";
+    $ergGetNickname = mysqli_query($con, $sqlGetNickname);
+
+    //change Nickname
+    //Is there already this Nickname?
+    $stmt = $con->prepare("SELECT GamingTag FROM Persdat WHERE Acc_ID = ?");
+    $stmt->bind_param("s", $sessionaccid);
     $stmt->execute();
     $result = $stmt->get_result();
-    if ($result->num_rows == 0){
-        echo "Da ist nix Nickname";
-    }
-    if ($result->num_rows == 1){
-        $getnickname = ""; //maksim mach bidde
-    }
     
-    $sqlchange = "UPDATE persdat SET GamingTag = '$newnickname' WHERE E_Mail = $sessionemail";
-    mysqli_query($con, $sqlchange);
+    //nickname not available
+    $isnicknamefree ="";
+    if ($result->num_rows == 1){
+        $isnicknamefree = "Nicht verfü";
+    }
+    if ($result->num_rows == 0){
+        $updateNickname = "UPDATE persdat SET GamingTag = '$newnickname' WHERE Acc_ID = '$sessionaccid'";
+        $isnicknamefree = "Zufrieden?";
+    }
+
     mysqli_close($con);
 ?>
 <html>
     <head>
         <title> Forum ACT - Gaming </title>
-        <link rel="stylesheet" href="CSSFiles/AccountSettings.css">
+        <link rel="stylesheet" href="htdocs/WebsiteDBA/CSSFiles/AccountSettings.css">
     </head>
     <body>
         <section>
             <div class="form-box">
                 <div class="form-value">
                     <h1> Settings </h1>
-                    <form  class = "Nickname" action="PHPFiles/SettingsNickname.php" method="post">
+                    <form  class = "Nickname" action="SettingsNickname.php" method="post">
                         <div class="NicknameDiv">
                             <h3> Nickname </h3>
+                            <p>Aktueller Gaming Tag:<?php while ($row = mysqli_fetch_array($ergGetNickname)){echo $row["GamingTag"];}?></p>
                             <p> Neuer Nickname</p>
                             <div class="inputbox">
-                                <input type="text" name="NewNickname">
+                                <input type="text" name="NewNickname" style="margin:0px;">
+                                <p><?php echo $isnicknamefree?></p>
                             </div>
                             <div class="Button">
                                 <button type="submit" name="abschicken" value="abschickenNickname">&Auml;ndern</button>
