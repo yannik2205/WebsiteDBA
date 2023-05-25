@@ -5,8 +5,8 @@
     //Check if the form is submitted
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         //Check if the email and password are provided
-        if (isset($_POST['Email']) && isset($_POST['Password'])){
-            $email = $_POST['Email'];
+        if (isset($_POST['Username']) && isset($_POST['Password'])){
+            $username = $_POST['Username'];
             $password = $_POST['Password'];
 
             //Establish a connection to MySQL
@@ -15,15 +15,15 @@
             $pass ="Pzn^3WcGa39^kwKlI8mksT@1";
             $db = "s28_project";
 
-            $con = new mysqli($_SERVER, $user, $pass);
+            $con = new mysqli($_SERVER, $user, $pass, $db);
         
-            //chek the connection
-            if($con->connect_error){
+            //check the connection
+            /*if($conconnect_error){
                 die("Connection failed:" . $con->connect_error);
-            }
+            }*/
             //Prepare and execute the query
-            $stmt = $con->prepare("SELECT * FROM Account WHERE E_Mail = ?");
-            $stmt->bind_param("s", $email);
+            $stmt = $con->prepare("SELECT * FROM Account WHERE Username = ?");
+            $stmt->bind_param("s", $username);
             $stmt->execute();
             $result = $stmt->get_result();
 
@@ -35,30 +35,30 @@
                 //Verify the Password
                 if($password == $storedPassword){
                     //Authentication successful
-                    $_SESSION['E_Mail'] = $email; //Store the email in the session
-                    $temp = $_SESSION['E_Mail'];//store acc id in session
-                    $getAccID = "SELECT Acc_ID FROM Account where E_Mail = '$temp'";
+                    $_SESSION['Username'] = $username; //Store the username in the session
+                    $temp = $_SESSION['Username'];//store acc id in session
+                    $getAccID = "SELECT Acc_ID FROM Account where Username = '$temp'";
                     $erggetAcc = mysqli_query($con, $getAccID);
                     $vargetAcc = mysqli_fetch_array($erggetAcc);
-                    while ($row = mysqli_fetch_array($ergSelect)){
-                        $_SESSION['Acc_ID'] = $row["Vorname"];
+                    while ($row = mysqli_fetch_array($erggetAcc)){
+                        $_SESSION['Acc_ID'] = $row["Acc_ID"];
                     }
-                    header('Location: index.html'); //Redirect to the dashboard or another page
+                    header('Location: ../index.html'); //Redirect to the dashboard or another page
                     exit;
                 }else{
                     //Authentication failed
-                    $error = 'Invalid email or password';
+                    $error = 'Invalid Username or Password';
                 }
             }else{
                     //Authentication failed
-                    $error = 'Invalid email or password';
+                    $error = 'Invalid Username or password';
             }
 
             //close the statement and connection
             $stmt->close();
             $con->close();
             }else{
-                $error = 'Email and password are required';
+                $error = 'Username and password are required';
             }
         }
 ?>
@@ -80,8 +80,8 @@
                         <?php } ?>
                         <div class="inputbox">
                             <i class="fa-regular fa-envelope"></i>
-                            <input type="email" required name="Email">
-                            <label for="">Email</label>
+                            <input type="text" required name="Username">
+                            <label for=""> Username </label>
                         </div>
                         <div class="inputbox">
                             <i class="fa-solid fa-lock"></i>
