@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="icon" type="images/png" href="MainImages/eren.png">
+        <link rel="icon" type="images/png" href="../MainImages/eren.png">
         <title> Forum ACT - Gaming</title>
         <script src="https://kit.fontawesome.com/b86feec811.js" crossorigin="anonymous"></script>
 
         
         <!-- Stylesheets-->
-        <link rel="stylesheet" href="CSSFiles/Menu.css">
-        <link rel="stylesheet" href="CSSFiles/General.css">
+        <link rel="stylesheet" href="../CSSFiles/Menu1.css">
+        <link rel="stylesheet" href="../CSSFiles/General.css">
     </head>
 
     <body>
@@ -49,21 +49,33 @@
                         <span class="Link-Text">Server</span> 
                     </a>
                 </li>
-                    <li class="nav-item Account">
-                            <ul>
-                                <li>
-                                    <a href="PHPFiles/SettingsEmail.php" class="nav-link">
-                                    <i class="fa-solid fa-user-graduate"></i> 
-                                    <span class="Link-Text">Account</span> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="PHPFiles/login.php" class="nav-link" class="Account">
-                                        <i class="fa-solid fa-arrow-right-to-bracket"></i> 
-                                    <span class="Link-Text">Login</span> 
-                                    </a>
-                                </li>
-                            </ul>
+                    <div class="AccountStuff">
+                        <li>
+                            <a href="SettingsNickname.php" class="nav-link">
+                            <i class="fa-solid fa-user-graduate"></i> 
+                            <span class="Link-Text">Account</span> 
+                            </a>
+                        </li>
+                            <?php if (session_status()==PHP_SESSION_NONE){?>
+                                 <li>
+                                 <a href="login.php" class="nav-link">
+                                 <i class="fa-solid fa-arrow-right-to-bracket"></i> 
+                                 <span class="Link-Text">Login</span> 
+                                 </a></li>
+                                 <?php }?>
+                                 <?php if (session_status()==PHP_SESSION_ACTIVE){session_start();?>
+                                    <li>
+                                    <button name="logoutbutton" value="logout"></button>
+                                    <i class="fa-solid fa-arrow-right-to-bracket"></i> 
+                                    <?php
+                                    $valuelog = $_POST['logoutbutton'];
+                                    echo $valuelog;
+                                    ?>
+                                    </li>
+                                 <?php }?>
+                    </div>
+                    <li>    
+                        <p><?php echo "hallo"?></p>
                     </li>
             </ul>
         </nav>

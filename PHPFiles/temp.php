@@ -1,7 +1,7 @@
 <html>
     <head>
         <title> Forum ACT - Gaming </title>
-        <link rel="stylesheet" href="CSSFiles/AccountSettings.css">
+        <link rel="stylesheet" href="../CSSFiles/AccountSettings.css">
     </head>
     <body>
         <section>
