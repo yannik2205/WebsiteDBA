@@ -173,11 +173,12 @@
         <link rel="stylesheet" href="../CSSFiles/AccountSettings.css">
     </head>
     <body>
+        <h1> Settings </h1>
     <form class="Changes" action="SettingsNickname.php" method="post">
         <section>
                 <div class="form-box">
                     <div class="form-value">
-                        <h1> Settings </h1>
+                        
                             <div class="EmailDiv">
                                 <h4> Email </h4>
                                 <p>Aktuelle Email: <?php echo $currentemail?></p>
