@@ -192,7 +192,7 @@
                             
                             </div>
                         <div class="PasswordDiv">
-                            <h5> Password </h5>
+                            <h4> Password </h4>
                             <p> Neues Password </p>
                             <div class="inputbox">
                                 <input type="text" name="NewPassword">
