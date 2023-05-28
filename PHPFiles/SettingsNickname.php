@@ -173,9 +173,8 @@
         <link rel="stylesheet" href="../CSSFiles/AccountSettings.css">
     </head>
     <body>
+    <form class="Changes" action="SettingsNickname.php" method="post">
         <section>
-        <form class="Changes" action="SettingsNickname.php" method="post">
-            <div class="for-flex"
                 <div class="form-box">
                     <div class="form-value">
                         <h1> Settings </h1>
@@ -243,8 +242,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
         </section>
+    </form>>
     </body>
 </html>

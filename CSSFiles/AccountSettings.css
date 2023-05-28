@@ -7,7 +7,7 @@ body{
     background-color: rgb(35, 35, 35);
 }
 h1{
-    color: white;
+    color: green;
     font-size: 80px; 
     margin-top: 50px; 
      
@@ -58,5 +58,5 @@ section{ /*der background der Seite basically */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 }
