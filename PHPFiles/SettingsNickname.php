@@ -170,15 +170,14 @@
         <link rel="stylesheet" href="../CSSFiles/AccountSettings1.css">
     </head>
     <body>
-        <h1> Settings </h1>
     <form class="Changes" action="SettingsNickname.php" method="post">
         <section>
-                <div class="form-box">
-                    <div class="form-value">
-                        
+                <div class="form-box-left">
+                    <div class="form-value">     
                             <div class="EmailDiv">
-                                <h4> Email </h4>
-                                <p>Aktuelle Email: <?php echo $currentemail?></p>
+                                <h5> Email </h5>
+                                <p>Aktuelle Email: </p>
+                                <p><?php echo $currentemail?></p>
                                 <p> Neue Email     </p>
                                 <div class="inputbox">
                                     <input type="text" name="NewEmail">
@@ -196,24 +195,18 @@
                             </div>
                         </div>
                     </div>
+                    <div class="ButtonLeft">
+                        <button type="submit" name="abschicken" value="abschickenFavGame"><p class="buttonp">Apply Changes</p></button>
+                    </div>
                 </div>
-                <div class="form-box">
-                    <div class="form-value">
-                        <div class="NicknameDiv">
-                            <h3> Nickname </h3>
-                            <p>Aktueller Gaming Tag:<?php echo $currentnickname?></p>
-                            <p> Neuer Nickname</p>
-                            <div class="inputbox">
-                                <input type="text"name="NewNickname" style="margin:0px;">
-                            </div>
-                            <?php if (isset($errornickname)) { ?>
-                                <div class="error"><?php echo $errornickname; ?></div>
-                                <?php } ?>
-                            
-                        </div>
+                <div class="form-box-right">
+                    <div class="form-value-right">
+                        <div class="forflexy">
+                        <div class="persinfo">
                         <div class="VornameDiv">
                             <h5> Vorname </h5>
-                            <p>Aktueller Vorname: <?php echo $currentvorname?></p>
+                            <p>Aktueller Vorname:</p>
+                            <p> <?php echo $currentnickname?> </p>
                             <p> Neuer Vorname </p>
                             <div class="inputbox">
                                 <input type="text" name="NewVorname">
@@ -221,26 +214,40 @@
                         </div>
                         <div class="NachnameDiv">
                             <h5> Nachname </h5>
-                            <p>Aktueller Nachname: <?php echo $currentnachname?></p>
+                            <p>Aktueller Nachname: </p>
+                            <p><?php echo $currentnachname?></p>
                             <p> Neuer Nachname </p>
                             <div class="inputbox">
                                 <input type="text" name="NewNachname">
                             </div>  
                         </div>
+                        </div>
+                        <div class="gameinfo">
+                        <div class="NicknameDiv">
+                            <h5> Nickname </h5>
+                            <p>Aktueller Gaming Tag:</p>
+                            <p> <?php echo $currentnickname?> </p>
+                            <p> Neuer Nickname</p>
+                            <div class="inputbox">
+                                <input type="text"name="NewNickname">
+                            </div>
+                        </div>
                         <div class="FavGameDiv">
                             <h5> FavGame </h5>
-                            <p>Aktuelles Favourite Game: <?php echo $currentfavgame?></p>
+                            <p>Aktuelles Favourite Game:</p>
+                            <p><?php echo $currentfavgame?></p>
                             <p> Neues Favourite Game </p>
                             <div class="inputbox">
                                 <input type="text" name="NewFavGame">
                             </div>
-                            <div class="Button">
-                                <button type="submit" name="abschicken" value="abschickenFavGame">Apply Changes</button>
-                            </div>
                         </div>
-                    </div>
+                        </div>
+                        </div>
+                        <div class="ButtonRight">
+                                <button type="submit" name="abschicken" value="abschickenFavGame"><p class="buttonp">Apply Changes</p></button>
+                        </div>
                 </div>
         </section>
-    </form>>
+    </form>
     </body>
 </html>
