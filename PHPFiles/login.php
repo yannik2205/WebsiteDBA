@@ -45,7 +45,7 @@
                     while ($row = mysqli_fetch_array($erggetAcc)){
                         $_SESSION['Acc_ID'] = $row["Acc_ID"];
                     }
-                    header('Location: index.php'); //Redirect to the dashboard or another page
+                    header('Location: indexlogin.php'); //Redirect to the dashboard or another page
                     exit;
                 }else{
                     //Authentication failed

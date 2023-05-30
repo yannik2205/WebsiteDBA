@@ -1,8 +1,5 @@
 <?php
     session_start();
-    if (isset($_SESSION["Username"])){
-        session_destroy();
-    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,13 +53,21 @@
                     </a>
                 </li>
                     <div class="AccountStuff">
-                        <li>
-                            <a href="login.php" class="nav-link">
-                            <i class="fa-solid fa-receipt"></i>
-                            <span class="Link-Text">Login</span> 
+                        <li class="nav-item">
+                            <a href="SettingsNickname.php" class="nav-link">
+                            <i class="fa-solid fa-user-graduate"></i> 
+                            <span class="Link-Text">Account</span> 
                             </a>
-                        </li>
-                    </div>
+                        </li>  
+                        <form action="index.php">
+                            <li>
+                                <a href="index.php" class="nav-link">
+                                <i class="fa-solid fa-receipt"></i>
+                                <span class="Link-Text">Logout</span> 
+                                </a>
+                            </li> 
+                        </form>
+                    </div>   
             </ul>
         </nav>
     </body>
