@@ -40,7 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $_SESSION['Acc_ID'] = $row["Acc_ID"];
                 }
                 $temp2 = $_SESSION["Acc_ID"];
-                $InsertenPers = "INSERT INTO Persdat (Vorname, Nachname, GamingTag, FavGame, Acc_ID) VALUES ('leer', 'leer', 'leer', 'leer', '$temp2')";
+                $InsertenPers = "INSERT INTO Persdat (Vorname, Nachname, GamingTag, FavGame, Acc_ID) 
+                VALUES ('leer', 'leer', 'leer', 'leer', '$temp2')";
                 mysqli_query($con, $InsertenPers);
                 header('Location: indexlogin.php'); //Redirect to the dashboard or another page
                 exit;
