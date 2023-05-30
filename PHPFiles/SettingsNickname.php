@@ -9,9 +9,6 @@
     //sessionvariables
     $sessionaccid = $_SESSION['Acc_ID'];
     $sessionusername = $_SESSION['Username'];//$_SESSION['Username'];
-    echo $sessionaccid;
-    echo $sessionusername;
-    
 
     //ALL ABOUT EMAIL - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -170,7 +167,7 @@
 <html>
     <head>
         <title> Forum ACT - Gaming </title>
-        <link rel="stylesheet" href="CSSFiles/AccountSettings.css">
+        <link rel="stylesheet" href="../CSSFiles/AccountSettings.css">
     </head>
     <body>
         <h1> Settings </h1>

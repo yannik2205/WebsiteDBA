@@ -28,19 +28,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             //Verify the Password
             if($result->num_rows == 0){
                 //Authentication successful
+                $Inserten = "INSERT INTO Account (Username, E_Mail, Passwd) VALUES 
+                ('$username', '$email', '$password')";
+                mysqli_query($con, $Inserten);
                 session_start();
                 $_SESSION['Username'] = $username; //Store the username in the session
                 $temp = $_SESSION['Username'];//store acc id in session
                 $getAccID = "SELECT Acc_ID FROM Account where Username = '$temp'";
                 $erggetAcc = mysqli_query($con, $getAccID);
-                $vargetAcc = mysqli_fetch_array($erggetAcc);
                 while ($row = mysqli_fetch_array($erggetAcc)){
                     $_SESSION['Acc_ID'] = $row["Acc_ID"];
                 }
-                $Inserten = "INSERT INTO Account (Username, E_Mail, Passwd) VALUES 
-                ('$username', '$email', '$password')";
-                mysqli_query($con, $Inserten);
-                header('Location: index.php'); //Redirect to the dashboard or another page
+                $temp2 = $_SESSION["Acc_ID"];
+                $InsertenPers = "INSERT INTO Persdat (Vorname, Nachname, GamingTag, FavGame, Acc_ID) VALUES ('leer', 'leer', 'leer', 'leer', '$temp2')";
+                mysqli_query($con, $InsertenPers);
+                header('Location: indexlogin.php'); //Redirect to the dashboard or another page
                 exit;
             }else{
                 //Authentication failed
