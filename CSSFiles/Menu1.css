@@ -27,6 +27,7 @@ a{
     top: 14px;
     font-size: 20px;
     text-align: center;
+    color: white;
 }
 .fa-regular{
     position: relative;
@@ -44,6 +45,7 @@ a{
 }
 a:hover{
     background: #292929;
+    cursor: pointer;
 }
 nav:hover{
 width: 160px;
@@ -52,7 +54,10 @@ width: 160px;
     margin-top: 56vh;
 }
 .logoutbutton{
-    width: 30px;
-    height: 20px;
-    color: white;
+    padding-left: 6px;
+    background-color: #1a1a1a;
+    border: none;
+}
+.logoutbutton:hover{
+    cursor: pointer;
 }

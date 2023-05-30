@@ -1,5 +1,14 @@
 <?php
-    session_start();
+    global $test;
+    if ($test == 1){
+        echo "penis";
+    }
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if($_POST["logoutbutton"] == "logout"){
+        session_destroy();
+        header("Location: index.php");
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,17 +63,16 @@
                 </li>
                 <?php if (isset($_SESSION["Username"])){?>
                     <div class="AccountStuff">
-                        <li>
+                        <li class="nav-item">
                             <a href="SettingsNickname.php" class="nav-link">
                             <i class="fa-solid fa-user-graduate"></i> 
                             <span class="Link-Text">Account</span> 
                             </a>
                         </li>
-                        <li>
-                            <button name="logoutbutton" value="logout"></button>
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i> 
-                            <span class="Link-Text">Logout</span> 
-                            </a>
+                        <li class="nav-item">                       
+                            <button type="submit" class="logoutbutton" name="logoutbutton" value="logout">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            </button>
                         </li>    
                     </div>
                     <?php }  else{?>

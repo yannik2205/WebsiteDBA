@@ -36,6 +36,8 @@
                 //Verify the Password
                 if($password == $storedPassword){
                     //Authentication successful
+                    $test = 1;
+                    global $test;
                     $_SESSION['Username'] = $username; //Store the username in the session
                     $temp = $_SESSION['Username'];//store acc id in session
                     $getAccID = "SELECT Acc_ID FROM Account where Username = '$temp'";
@@ -48,11 +50,13 @@
                 }else{
                     //Authentication failed
                     $error = 'Invalid Username or Password';
+                    $test = 0;
                 }
             }else{
                     //Authentication failed
                     $error = 'Invalid Username or password';
-            }
+                    $test = 0;
+                }
 
             //close the statement and connection
             $stmt->close();
