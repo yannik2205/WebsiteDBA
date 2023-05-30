@@ -1,0 +1,13 @@
+body{
+    background-color: #000; /*setzt diee background color dafür, dass wenn gescrollt wird und das bild endet, dass kein weißer, sondern ein schwarzer screen gezeigt wird*/
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+    background: url(BackgroundImages/StarWarsBackground.jpg);
+    background-position: center;
+    background-size: cover;
+}

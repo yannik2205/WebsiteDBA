@@ -160,6 +160,15 @@
                 while ($row = mysqli_fetch_array($ergGetFavGame)){
                     $currentfavgame = $row["FavGame"];
                 }
+                //Insert into fav games and check if already there
+                $stmt = $con->prepare("SELECT * FROM games WHERE Game_Name = ?");
+                $stmt->bind_param("s", $newfavgame);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                if ($result->num_rows == 0){
+                    $insertfavgame = "INSERT INTO games (Game_Name) VALUES ('$newfavgame')";
+                    mysqli_query($con, $insertfavgame);
+                }
             }
     }
     mysqli_close($con);
