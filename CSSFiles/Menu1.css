@@ -40,6 +40,7 @@ a{
     position: relative;
     top: 12px;
     margin-left: 0px;
+    color: white;
 }
 a:hover{
     background: #292929;
@@ -53,4 +54,5 @@ width: 160px;
 .logoutbutton{
     width: 30px;
     height: 20px;
+    color: white;
 }

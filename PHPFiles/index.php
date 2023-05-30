@@ -19,7 +19,7 @@
         <nav class="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="index.php" class="nav-link">
                         <i class="fa-solid fa-earth-americas"></i>
                         <span class="Link-Text">Home</span> 
                     </a>
@@ -65,14 +65,7 @@
                             <i class="fa-solid fa-arrow-right-to-bracket"></i> 
                             <span class="Link-Text">Logout</span> 
                             </a>
-                        </li>
-                                 
-                                 <!--
-                                    <li>
-                                    <button name="logoutbutton" value="logout"></button>
-                                    <i class="fa-solid fa-arrow-right-to-bracket"></i> 
-                                    </li>-->
-                                 
+                        </li>    
                     </div>
                     <?php }  else{?>
                     <div class="AccountStuff">
