@@ -16,12 +16,18 @@
     </head>
     <body>
         <section>
-        <div class="form-box">
-            <div class="form-value">  
-                <?php while ($row = mysqli_fetch_array($erggetallgames)){ ?>
-                    <p> <?php echo $row["Game_Name"]; ?> </p>
-                <?php } ?>
+            <h1 class="top"> All <h1>
+            <h1> Favourite <h1>
+            <h2> Games <h2>
+            <div class="form-box">
+                <div class="form-value">
+                    <div class="echos">  
+                        <?php while ($row = mysqli_fetch_array($erggetallgames)){ ?>
+                            <p> <?php echo $row["Game_Name"]; ?> </p>
+                        <?php } ?>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </body>
 </html>
