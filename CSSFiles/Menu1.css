@@ -4,7 +4,7 @@ nav{
     bottom: 0;
     left: 0;
     height: 100%;
-    background: #f9e5e5;
+    background: #1a1a1a;
     width: 80px;
     overflow: hidden;
     transition: width 0.2s, linear;
@@ -14,7 +14,7 @@ nav{
 }
 a{
     position: relative;
-    color: rgb(159, 159, 159);
+    color: rgb(220, 220, 220);
     font-size: 14px;
     display: table;
     width: 300px;
@@ -49,4 +49,8 @@ width: 160px;
 }
 .AccountStuff{
     margin-top: 56vh;
+}
+.logoutbutton{
+    width: 30px;
+    height: 20px;
 }

@@ -12,12 +12,11 @@
             global $test;
 
             //Establish a connection to MySQL
-            $_SERVER = "localhost"; //Verbindung zu jonathans panel und dem server
-            $user = "root";
-            $pass ="";
-            $db = "s28_project";
+            require_once("connection.php");
+            global $con;
+            global $db;
 
-            $con = new mysqli($_SERVER, $user, $pass, $db);
+            mysqli_select_db($con, $db);
         
             //check the connection
             /*if($conconnect_error){
@@ -41,7 +40,6 @@
                     $temp = $_SESSION['Username'];//store acc id in session
                     $getAccID = "SELECT Acc_ID FROM Account where Username = '$temp'";
                     $erggetAcc = mysqli_query($con, $getAccID);
-                    $vargetAcc = mysqli_fetch_array($erggetAcc);
                     while ($row = mysqli_fetch_array($erggetAcc)){
                         $_SESSION['Acc_ID'] = $row["Acc_ID"];
                     }
@@ -68,7 +66,7 @@
 <html lang="en">
     <head>
         <title>Forum ACT - Gaming | Login</title>
-        <link rel="stylesheet" href="CssFiles/Login.css">
+        <link rel="stylesheet" href="../CssFiles/Login.css">
         <script src="https://kit.fontawesome.com/b86feec811.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -92,7 +90,7 @@
                         </div>
                         <button type="submit" name="abschicken" value="abschicken">Log in</button>
                         <div class="register">
-                            <p>Don't have an account? <a href="#">Register</a></p>
+                            <p>Don't have an account? <a href="register.php">Register</a></p>
                         </div>
                     </form>
                 </div>

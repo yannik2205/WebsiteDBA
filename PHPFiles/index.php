@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +15,7 @@
     </head>
 
     <body>
-        <img src="MainImages/BackgroundEldenRing.jpg" class="Background">
+        <img src="../MainImages/BackgroundEldenRing.jpg" class="Background">
         <nav class="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -49,6 +52,7 @@
                         <span class="Link-Text">Server</span> 
                     </a>
                 </li>
+                <?php if (isset($_SESSION["Username"])){?>
                     <div class="AccountStuff">
                         <li>
                             <a href="SettingsNickname.php" class="nav-link">
@@ -56,27 +60,36 @@
                             <span class="Link-Text">Account</span> 
                             </a>
                         </li>
-                            <?php if (session_status()==PHP_SESSION_NONE){?>
-                                 <li>
-                                 <a href="login.php" class="nav-link">
-                                 <i class="fa-solid fa-arrow-right-to-bracket"></i> 
-                                 <span class="Link-Text">Login</span> 
-                                 </a></li>
-                                 <?php }?>
-                                 <?php if (session_status()==PHP_SESSION_ACTIVE){session_start();?>
+                        <li>
+                            <button name="logoutbutton" value="logout"></button>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> 
+                            <span class="Link-Text">Logout</span> 
+                            </a>
+                        </li>
+                                 
+                                 <!--
                                     <li>
                                     <button name="logoutbutton" value="logout"></button>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i> 
-                                    <?php
-                                    $valuelog = $_POST['logoutbutton'];
-                                    echo $valuelog;
-                                    ?>
-                                    </li>
-                                 <?php }?>
+                                    </li>-->
+                                 
                     </div>
-                    <li>    
-                        <p><?php echo "hallo"?></p>
-                    </li>
+                    <?php }  else{?>
+                    <div class="AccountStuff">
+                        <li>
+                            <a href="login.php" class="nav-link">
+                            <i class="fa-solid fa-receipt"></i>
+                            <span class="Link-Text">Login</span> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="register.php" class="nav-link">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            <span class="Link-Text">Register</span>
+                            </a> 
+                        </li>    
+                    </div>   
+                    <?php } ?> 
             </ul>
         </nav>
     </body>
