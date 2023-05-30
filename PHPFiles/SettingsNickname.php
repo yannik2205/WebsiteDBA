@@ -256,6 +256,11 @@
                                 <button type="submit" name="abschicken" value="abschickenFavGame"><p class="buttonp">Apply Changes</p></button>
                         </div>
                 </div>
+                <div class="buttonlink">
+                    <a href="indexlogin.php" class="nav-link">
+                        <span class="Link-Text">Start</span> 
+                    </a>
+                </div>
         </section>
     </form>
     </body>

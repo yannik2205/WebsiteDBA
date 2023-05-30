@@ -29,9 +29,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="favgames.php" class="nav-link">
                         <i class="fa-solid fa-magnifying-glass"></i> 
-                        <span class="Link-Text">Search</span> 
+                        <span class="Link-Text">Fav Games</span> 
                     </a>
                 </li>
 
