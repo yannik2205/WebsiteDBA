@@ -63,7 +63,8 @@
                                  <span class="Link-Text">Login</span> 
                                  </a></li>
                                  <?php }?>
-                                 <?php if (session_status()==PHP_SESSION_ACTIVE){session_start();?>
+                                 <?php 
+                                if (session_status()==PHP_SESSION_ACTIVE){session_start();?>
                                     <li>
                                     <button name="logoutbutton" value="logout"></button>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i> 
